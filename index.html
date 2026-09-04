@@ -6,7 +6,7 @@
   <title>Tsyrih Hair Care — Beauté naturelle</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -59,47 +59,113 @@
       </div>
 
       <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
         <input type="text" id="searchInput" placeholder="Rechercher un produit...">
       </div>
 
-      <div class="products">
-        <article class="product" data-name="Shampoing Nourrissant" data-price="28000">
-          <div class="product-img"><span>TSYRIH<br><small>HAIR CARE</small></span></div>
-          <div class="product-info">
-            <span class="tag">Best-seller</span>
-            <h3>Shampoing Nourrissant</h3>
-            <p>Nettoie, nourrit et renforce.</p>
-            <strong>28.000 Ar</strong>
-          </div>
-        </article>
-        <article class="product" data-name="Masque Réparateur" data-price="35000">
-          <div class="product-img"><span>TSYRIH<br><small>HAIR CARE</small></span></div>
-          <div class="product-info">
-            <span class="tag">Réparation</span>
-            <h3>Masque Réparateur</h3>
-            <p>Beurre de karité & huile de coco.</p>
-            <strong>35.000 Ar</strong>
-          </div>
-        </article>
-        <article class="product" data-name="Huile Capillaire" data-price="32000">
-          <div class="product-img"><span>TSYRIH<br><small>HAIR CARE</small></span></div>
-          <div class="product-info">
-            <span class="tag">Nourrissant</span>
-            <h3>Huile Capillaire</h3>
-            <p>Nourrit, protège et fait briller.</p>
-            <strong>32.000 Ar</strong>
-          </div>
-        </article>
-        <article class="product" data-name="Spray Hydratant" data-price="30000">
-          <div class="product-img"><span>TSYRIH<br><small>HAIR CARE</small></span></div>
-          <div class="product-info">
-            <span class="tag">Hydratation</span>
-            <h3>Spray Hydratant</h3>
-            <p>Hydrate, démêle et protège.</p>
-            <strong>30.000 Ar</strong>
-          </div>
-        </article>
+      <!-- Carrousel de produits -->
+      <div class="slider-wrapper">
+        <div class="products-track" id="productsTrack">
+          
+          <article class="product-card" data-name="Shampoing Nourrissant">
+            <div class="card-bg">
+              <span>th♡</span>
+              <small>TSYRIH</small>
+            </div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <span class="card-subtitle">Soin lavant — Best-seller</span>
+              <h3 class="card-title">SHAMPOING NOURRISSANT</h3>
+              <p class="card-desc">Nettoie, nourrit et renforce en profondeur.</p>
+              <div class="card-price">28.000 Ar</div>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Masque Réparateur">
+            <div class="card-bg">
+              <span>th♡</span>
+              <small>TSYRIH</small>
+            </div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <span class="card-subtitle">Soin intense — Réparation</span>
+              <h3 class="card-title">MASQUE RÉPARATEUR</h3>
+              <p class="card-desc">Beurre de karité & huile de coco pure.</p>
+              <div class="card-price">35.000 Ar</div>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Huile Capillaire">
+            <div class="card-bg">
+              <span>th♡</span>
+              <small>TSYRIH</small>
+            </div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <span class="card-subtitle">Finition — Nourrissant</span>
+              <h3 class="card-title">HUILE CAPILLAIRE</h3>
+              <p class="card-desc">Nourrit, protège et sublime la brillance.</p>
+              <div class="card-price">32.000 Ar</div>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Spray Hydratant">
+            <div class="card-bg">
+              <span>th♡</span>
+              <small>TSYRIH</small>
+            </div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <span class="card-subtitle">Quotidien — Hydratation</span>
+              <h3 class="card-title">SPRAY HYDRATANT</h3>
+              <p class="card-desc">Hydrate, démêle et protège la fibre.</p>
+              <div class="card-price">30.000 Ar</div>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Sérum Repousse">
+            <div class="card-bg">
+              <span>th♡</span>
+              <small>TSYRIH</small>
+            </div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <span class="card-subtitle">Cuir chevelu — Croissance</span>
+              <h3 class="card-title">SÉRUM REPOUSSE</h3>
+              <p class="card-desc">Stimule la pousse et fortifie la racine.</p>
+              <div class="card-price">38.000 Ar</div>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Baume Démêlant">
+            <div class="card-bg">
+              <span>th♡</span>
+              <small>TSYRIH</small>
+            </div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <span class="card-subtitle">Apres-shampoing — Douceur</span>
+              <h3 class="card-title">BAUME DÉMÊLANT</h3>
+              <p class="card-desc">Gaine le cheveu et facilite le coiffage.</p>
+              <div class="card-price">26.000 Ar</div>
+            </div>
+          </article>
+
+        </div>
       </div>
+
+      <!-- Contrôles du Carrousel (Navigation + Barre de progression + Compteur) -->
+      <div class="slider-controls">
+        <div class="arrow-buttons">
+          <button class="nav-btn" id="prevBtn" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="nav-btn" id="nextBtn" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+        <div class="carousel-counter" id="carouselCounter">6</div>
+      </div>
+
     </section>
 
     <section id="apropos" class="story">
@@ -150,6 +216,12 @@
       <p><i class="fa-brands fa-instagram"></i> <a href="https://instagram.com" target="_blank">@tsyrih_haircare</a></p>
     </div>
   </footer>
+
+  <div id="overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
   <div id="overlay"></div>
 
