@@ -94,7 +94,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCarouselControls();
 });
-  }
-
-  updateCarouselControls();
-});
