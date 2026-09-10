@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tsyrih Hair Care — Soins Botaniques & Rituels Capillaires d'Exception</title>
+  <meta name="description" content="Découvrez nos soins capillaires d'exception : formules 100% végétales, sans sulfates ni silicones. Diagnostic capillaire en ligne et commande directe via WhatsApp.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- En-tête & Menu de Navigation -->
+  <header class="navbar">
+    <div class="header-inner">
+      <button class="menu-btn" id="mobile-toggle" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+      <a class="logo" href="#accueil">
+        <span class="logo-mark">th♡</span>
+        <strong>TSYRIH</strong>
+        <small>HAIR CARE</small>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#accueil" class="nav-link active">Accueil</a>
+        <a href="#boutique" class="nav-link">Nos Gammes</a>
+        <a href="#diagnostic" class="nav-link">Diagnostic</a>
+        <a href="#apropos" class="nav-link">Notre Histoire</a>
+        <a href="#engagements" class="nav-link">Engagements</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="cart-toggle-btn" aria-label="Ouvrir le panier">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cart-badge" style="display: none;">0</span>
+        </button>
+        <a href="https://wa.me/23054887889" target="_blank" class="header-cta">
+          <i class="fa-brands fa-whatsapp"></i> <span>Contact WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section Accueil -->
+    <section id="accueil" class="accueil">
+      <div class="accueil-container">
+        <div class="accueil-copy">
+          <div class="accueil-badge">
+            <i class="fa-solid fa-award"></i>
+            <span>Soins Botaniques Haut de Gamme</span>
+          </div>
+          <h1>Sublimez vos cheveux avec l'excellence <em>naturelle</em></h1>
+          <p>Des formules riches en actifs végétaux d'exception (Romarin, Coco, Beurre de Karité, Aloe Vera) sans sulfates ni silicones pour réparer, hydrater et stimuler la pousse au quotidien.</p>
+          
+          <div class="accueil-actions">
+            <a class="btn primary-btn" href="#boutique">
+              <i class="fa-solid fa-sparkles"></i> Découvrir les Soins
+            </a>
+            <a class="btn secondary-btn" href="#diagnostic">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Diagnostic Sur-Mesure
+            </a>
+          </div>
+
+          <div class="accueil-stats">
+            <div class="stat-item">
+              <h4>98%</h4>
+              <p>Ingrédients naturels</p>
+            </div>
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Formules botaniques</p>
+            </div>
+            <div class="stat-item">
+              <h4>0%</h4>
+              <p>Sulfates & Silicones</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accueil-products">
+          <div class="img-frame">
+            <img src="img1.jpg" alt="Gamme complète de soins capillaires Tsyrih Hair Care" class="accueil-img">
+          </div>
+          <div class="accueil-float-card">
+            <div class="float-icon">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <div class="float-info">
+              <strong>100% Végan & Cruelty-free</strong>
+              <span>Confectionné avec passion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges de Confiance / Avantages -->
+    <section class="benefits">
+      <article>
+        <i class="fa-solid fa-leaf"></i>
+        <div>
+          <b>100% Naturel</b>
+          <small>Huile de Romarin, Aloe Vera, Karité</small>
+        </div>
+      </article>
+      <article>
+        <i class="fa-solid fa-droplet"></i>
+        <div>
+          <b>Hydratation Intense</b>
+          <small>Nourrit & répare en profondeur</small>
+        </div>
+      </article>
+      <article>
+        <i class="fa-solid fa-seedling"></i>
+        <div>
+          <b>Booster de Pousse</b>
+          <small>Fortifie dès la racine</small>
+        </div>
+      </article>
+      <article>
+        <i class="fa-solid fa-heart"></i>
+        <div>
+          <b>Tous types de cheveux</b>
+          <small>Crépus, bouclés, frisés ou lisses</small>
+        </div>
+      </article>
+    </section>
+
+    <!-- Quiz Diagnostic Capillaire -->
+    <section class="diagnostic-section" id="diagnostic">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Diagnostic Personnalisé</span>
+          <h2>Trouvez la Routine Idéale <em>pour Vos Cheveux</em></h2>
+          <p class="section-desc">Répondez à 3 questions rapides pour recevoir votre rituel de soins sur-mesure.</p>
+          <div class="title-divider"></div>
+        </div>
+
+        <div class="quiz-wrapper">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+          </div>
+
+          <!-- Étape 1 -->
+          <div class="quiz-step active" id="quiz-step-1" data-step="1">
+            <h3>1. Quelle est la nature principale de vos cheveux ?</h3>
+            <p class="quiz-subtitle">Sélectionnez la texture qui correspond le mieux à votre chevelure au naturel.</p>
+            
+            <div class="quiz-options-grid">
+              <button class="quiz-option-btn" data-value="boucles">
+                <i class="fa-solid fa-wave-square"></i>
+                <strong>Ondulés ou Bouclés</strong>
+                <span>En quête de rebond et sans frisottis</span>
+              </button>
+              <button class="quiz-option-btn" data-value="abimes">
+                <i class="fa-solid fa-fire"></i>
+                <strong>Secs, Abîmés ou Fourchus</strong>
+                <span>Fragilisés par la chaleur ou la casse</span>
+              </button>
+              <button class="quiz-option-btn" data-value="fins">
+                <i class="fa-solid fa-feather"></i>
+                <strong>Lisses ou Fins</strong>
+                <span>Manque de volume et besoin de légèreté</span>
+              </button>
+              <button class="quiz-option-btn" data-value="crepus">
+                <i class="fa-solid fa-circle-nodes"></i>
+                <strong>Frisés à Crépus</strong>
+                <span>Besoin intense de nutrition et souplesse</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Étape 2 -->
+          <div class="quiz-step" id="quiz-step-2" data-step="2">
+            <h3>2. Quelle est votre priorité absolue ?</h3>
+            <p class="quiz-subtitle">L'objectif numéro 1 que vous désirez atteindre.</p>
+
+            <div class="quiz-options-grid">
+              <button class="quiz-option-btn" data-value="casse">
+                <i class="fa-solid fa-heart-crack"></i>
+                <strong>Réparer la casse</strong>
+                <span>Sceller les pointes et renforcer la fibre</span>
+              </button>
+              <button class="quiz-option-btn" data-value="chute">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                <strong>Stimuler la pousse & freiner la chute</strong>
+                <span>Densifier et réveiller les bulbes</span>
+              </button>
+              <button class="quiz-option-btn" data-value="hydratation">
+                <i class="fa-solid fa-droplet"></i>
+                <strong>Hydratation & Douceur</strong>
+                <span>Éliminer l'aspect rêche et terne</span>
+              </button>
+              <button class="quiz-option-btn" data-value="boucles">
+                <i class="fa-solid fa-sparkles"></i>
+                <strong>Définir les boucles</strong>
+                <span>Des boucles soyeuses et bien dessinées</span>
+              </button>
+            </div>
+
+            <div class="quiz-navigation">
+              <button class="btn secondary-btn btn-sm quiz-prev-btn"><i class="fa-solid fa-arrow-left"></i> Précédent</button>
+            </div>
+          </div>
+
+          <!-- Étape 3 -->
+          <div class="quiz-step" id="quiz-step-3" data-step="3">
+            <h3>3. À quelle fréquence lavez-vous vos cheveux ?</h3>
+            <p class="quiz-subtitle">Pour adapter l'intensité et les textures de votre rituel.</p>
+
+            <div class="quiz-options-grid">
+              <button class="quiz-option-btn" data-value="hebdo">
+                <i class="fa-solid fa-calendar-day"></i>
+                <strong>1 fois par semaine</strong>
+                <span>Rituel profond et généreux</span>
+              </button>
+              <button class="quiz-option-btn" data-value="modere">
+                <i class="fa-solid fa-calendar-week"></i>
+                <strong>2 à 3 fois par semaine</strong>
+                <span>Équilibre idéal soin et légèreté</span>
+              </button>
+              <button class="quiz-option-btn" data-value="quotidien">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <strong>Quasi tous les jours</strong>
+                <span>Textures ultra-douces non décapantes</span>
+              </button>
+            </div>
+
+            <div class="quiz-navigation">
+              <button class="btn secondary-btn btn-sm quiz-prev-btn"><i class="fa-solid fa-arrow-left"></i> Précédent</button>
+            </div>
+          </div>
+
+          <!-- Résultat Diagnostic -->
+          <div class="quiz-step" id="quiz-step-result" data-step="4">
+            <div class="quiz-result-box">
+              <span class="result-badge"><i class="fa-solid fa-circle-check"></i> Votre Prescription Botanique</span>
+              <h3 id="routine-title">Rituel Sur-Mesure</h3>
+              <p id="routine-desc"></p>
+              
+              <p style="font-size: 0.9rem; font-weight: 600; color: var(--text-main); margin-bottom: 1rem;">
+                Les soins recommandés pour votre chevelure :
+              </p>
+              <div class="recommended-routine-items" id="recommended-items-container">
+                <!-- Rempli en JS -->
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+              <button class="btn primary-btn" id="add-routine-btn">
+                <i class="fa-solid fa-cart-plus"></i> Ajouter le rituel complet au panier (-10%)
+              </button>
+              <button class="btn secondary-btn" id="restart-quiz-btn">
+                <i class="fa-solid fa-rotate-right"></i> Recommencer le test
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Boutique & Catalogue Produits -->
+    <section id="boutique" class="shop">
+      <div class="section-title">
+        <p class="eyebrow">Routines Capillaires</p>
+        <h2>Nos Soins <em>D'Exception</em></h2>
+        <div class="title-divider"></div>
+      </div>
+
+      <!-- Filtres et Recherche -->
+      <div class="catalog-controls">
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Rechercher un soin, un ingrédient...">
+        </div>
+
+        <div class="catalog-filters">
+          <button class="filter-btn active" data-filter="all">Tous les soins</button>
+          <button class="filter-btn" data-filter="lavage">Nettoyage & Soin</button>
+          <button class="filter-btn" data-filter="pousse">Pousse & Sérums</button>
+          <button class="filter-btn" data-filter="coiffant">Coiffants & Hydratation</button>
+        </div>
+      </div>
+
+      <!-- Carrousel de produits -->
+      <div class="slider-wrapper">
+        <div class="products-track" id="productsTrack">
+          <!-- Injecté dynamiquement par JavaScript -->
+        </div>
+      </div>
+
+      <!-- Contrôles du Carrousel -->
+      <div class="slider-controls">
+        <button class="nav-btn" id="prevBtn" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+        <button class="nav-btn" id="nextBtn" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </section>
+
+    <!-- Notre Histoire / À propos -->
+    <section id="apropos" class="story">
+      <div class="story-container">
+        <div class="story-image">
+          <img src="img1.jpg" alt="Philosophie Tsyrih Hair Care">
+        </div>
+        <div class="story-content">
+          <span class="eyebrow">L'Univers Tsyrih</span>
+          <h2>Des cheveux sains, une confiance <em>affirmée</em></h2>
+          <p>Chez <strong>Tsyrih Hair Care</strong>, nous croyons en une beauté authentique, saine et respectueuse. Nos formules sont créées à partir d'ingrédients naturels rigoureusement sélectionnés pour réparer, fortifier et sublimer la texture naturelle de chaque cheveu.</p>
+          <div class="story-features">
+            <div class="sf-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Formules certifiées sans sulfates ni parabènes</span>
+            </div>
+            <div class="sf-item">
+              <i class="fa-solid fa-check"></i>
+              <span>Riches en extraits botaniques & huiles précieuses</span>
+            </div>
+            <div class="sf-item">
+              <i class="fa-solid fa-check"></i>
+              <span>100% végétal et non testé sur les animaux</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engagements & Valeurs -->
+    <section id="engagements" class="commitments">
+      <div class="section-title">
+        <p class="eyebrow">Valeurs & Qualité</p>
+        <h2>Nos <em>Engagements</em></h2>
+        <div class="title-divider"></div>
+      </div>
+      <div class="commit-grid">
+        <div class="commit-card">
+          <span class="commit-num">01</span>
+          <h3>Naturalité</h3>
+          <p>Sélection d'actifs 100% naturels (Romarin, Coco, Karité, Aloe Vera) pour préserver le cuir chevelu.</p>
+        </div>
+        <div class="commit-card">
+          <span class="commit-num">02</span>
+          <h3>Performance</h3>
+          <p>Des soins conçus pour agir au cœur de la fibre capillaire pour un résultat visible dès les premières applications.</p>
+        </div>
+        <div class="commit-card">
+          <span class="commit-num">03</span>
+          <h3>Douceur</h3>
+          <p>Adapté à toutes les textures de cheveux : crépus, bouclés, frisés, lisses ou défrisés.</p>
+        </div>
+        <div class="commit-card">
+          <span class="commit-num">04</span>
+          <h3>Accompagnement</h3>
+          <p>Une équipe disponible via WhatsApp pour vous conseiller la meilleure routine personnalisée.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Foire Aux Questions (FAQ) -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Foire Aux Questions</span>
+          <h2>Tout Ce Que Vous <em>Devez Savoir</em></h2>
+          <div class="title-divider"></div>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span>Comment passer commande ?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Ajoutez vos soins au panier puis cliquez sur <strong>« Commander via WhatsApp »</strong>. Un message pré-rempli avec votre sélection sera automatiquement généré pour finaliser votre commande directement avec notre équipe.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Vos produits conviennent-ils aux enfants et femmes enceintes ?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Oui ! Nos formules douces à base d'Aloe Vera, Beurre de Karité et Huiles végétales conviennent à toute la famille dès 3 ans.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Quels sont les délais et modalités de livraison ?</span>
+              <i class="fa-solid fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Nous livrons rapidement à domicile ou en point relais. La livraison est offerte à partir de 150.000 Ar d'achat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">th♡</span>
+          <strong>TSYRIH</strong>
+          <small>HAIR CARE</small>
+        </div>
+        <p>Soins capillaires d'exception conçus avec passion pour révéler la beauté naturelle de vos cheveux.</p>
+        <div class="footer-socials">
+          <a href="https://web.facebook.com/profile.php?id=61593890565786" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://wa.me/23054887889" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:tsyrihhaircare@gmail.com" target="_blank" aria-label="envelope"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#boutique">Produits</a></li>
+          <li><a href="#diagnostic">Diagnostic</a></li>
+          <li><a href="#apropos">Notre Histoire</a></li>
+          <li><a href="#engagements">Nos Engagements</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact & Commandes</h4>
+        <p><i class="fa-solid fa-location-dot"></i> Antananarivo, Madagascar</p>
+        <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/23054887889" target="_blank">+230 54 88 78 89</a></p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:tsyrihhaircare@gmail.com">tsyrihhaircare@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Panier Latéral (Cart Drawer) -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer" id="cart-drawer">
+      <div class="cart-header">
+        <h3><i class="fa-solid fa-bag-shopping"></i> Votre Sélection</h3>
+        <button class="close-cart-btn" id="close-cart-btn" aria-label="Fermer le panier">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Barre de livraison gratuite -->
+      <div class="shipping-bar-box">
+        <div class="shipping-bar-text" id="shipping-text">
+          Ajoutez des articles pour la livraison gratuite !
+        </div>
+        <div class="shipping-progress-track">
+          <div class="shipping-progress-fill" id="shipping-progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="cart-items-container" id="cart-items-container">
+        <!-- Produits injectés via JS -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-subtotal-row">
+          <span>Sous-total</span>
+          <span id="cart-subtotal">0 Ar</span>
+        </div>
+        <div class="cart-subtotal-row" style="font-size: 0.9rem; margin-bottom: 0.4rem;">
+          <span>Livraison</span>
+          <span id="cart-shipping">0 Ar</span>
+        </div>
+        <div class="cart-subtotal-row" style="font-size: 1.25rem; font-weight: 700; border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
+          <span>Total</span>
+          <span id="cart-total" style="color: var(--primary-dark);">0 Ar</span>
+        </div>
+
+        <div class="promo-input-row">
+          <input type="text" id="promo-input" placeholder="Code promo (ex: BEAUTE10)">
+          <button class="btn primary-btn btn-sm" id="apply-promo-btn">Appliquer</button>
+        </div>
+        <p id="promo-feedback"></p>
+
+        <div class="cart-actions">
+          <button class="btn btn-whatsapp" id="whatsapp-checkout-btn">
+            <i class="fa-brands fa-whatsapp"></i> Commander via WhatsApp
+          </button>
+          <button class="btn btn-sm" id="clear-cart-btn" style="color: var(--text-muted); font-size: 0.8rem; text-decoration: underline;">
+            Vider le panier
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modale Aperçu Rapide Produit -->
+  <div class="modal-overlay" id="product-modal-overlay">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body">
+        <div class="modal-image-col">
+          <div class="card-image-placeholder" id="modal-img-box">
+            <span>th♡</span>
+            <small>TSYRIH</small>
+          </div>
+        </div>
+        <div class="modal-info-col">
+          <span class="eyebrow" id="modal-category">Catégorie</span>
+          <h2 id="modal-title" style="font-size: 1.5rem; margin: 0.4rem 0;">Titre</h2>
+          <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem;">
+            <span class="card-price" id="modal-price" style="font-size: 1.5rem;">0 Ar</span>
+            <small id="modal-volume" style="color: var(--text-muted);"></small>
+          </div>
+
+          <p id="modal-desc" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;"></p>
+          
+          <div class="modal-ingredients" style="margin-bottom: 1rem;">
+            <strong>🌿 Ingrédients clés :</strong>
+            <p id="modal-ingredients" style="color: var(--primary-dark); font-size: 0.85rem; margin-top: 0.25rem;"></p>
+          </div>
+
+          <div class="modal-usage">
+            <strong>✨ Conseils d'application :</strong>
+            <p id="modal-usage" style="font-size: 0.85rem; margin-top: 0.25rem;"></p>
+          </div>
+
+          <div style="margin-top: 1.5rem;">
+            <button class="btn primary-btn" id="modal-add-to-cart-btn" style="width: 100%;">
+              <i class="fa-solid fa-plus"></i> Ajouter au panier
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Superposition Overlay Menu Mobile -->
+  <div id="overlay"></div>
+
+  <!-- Notifications Toasts -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Script Principal -->
+  <script src="script.js"></script>
+</body>
+</html>
