@@ -3,19 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const CONFIG = {
     whatsappNumber: "23054887889",
     freeShippingThreshold: 150000,
-    shippingCost: 5000,
-    promoCode: "BEAUTE10",
-    discountRate: 0.10
+    shippingCost: 5000
   };
 
-  // Base de données des soins
+  // Base de données des soins avec vos photos réelles
   const products = [
     {
       id: 1,
       name: "SHAMPOOING PURIFIANT & HYDRATANT",
       category: "lavage",
       price: 28000,
-      volume: "250 ml",
+      volume: "200 ml",
+      image: "62befda3-270c-4b68-8ce0-ef1b7f27f12c.jpg",
       badge: "Nettoyage Doux",
       badgeClass: "",
       ingredients: "Aloe Vera • Huile de Ricin • Beurre de Karité",
@@ -27,7 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "LEAVE-IN CRÈME HYDRATANTE",
       category: "coiffant",
       price: 35000,
-      volume: "300 ml",
+      volume: "100 g",
+      image: "2cd4cae1-d484-4b36-a3fd-f8c636240518.jpg",
       badge: "Best-Seller",
       badgeClass: "highlight",
       ingredients: "Karité • Huile de Coco • Aloe Vera",
@@ -36,10 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: 3,
-      name: "SÉRUM BOOSTER DE POUSSE",
+      name: "HUILE BOOST POUSSE",
       category: "pousse",
       price: 32000,
-      volume: "60 ml",
+      volume: "50 ml",
+      image: "8a54c1f2-728c-40a9-9914-5bfb73a44061.jpg",
       badge: "Croissance",
       badgeClass: "",
       ingredients: "Huile de Romarin • Huile de Ricin • Vitamine E",
@@ -52,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       category: "coiffant",
       price: 30000,
       volume: "200 ml",
+      image: "2cd4cae1-d484-4b36-a3fd-f8c636240518.jpg",
       badge: "Soin Quotidien",
       badgeClass: "",
       ingredients: "Infusion d'Aloe Vera & Glycérine",
@@ -60,9 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  // État du Panier & Code Promo
+  // État du Panier
   let cart = JSON.parse(localStorage.getItem('tsyrih_cart')) || [];
-  let appliedPromo = localStorage.getItem('tsyrih_promo') || null;
 
   // Sélecteurs DOM
   const productsTrack = document.getElementById("productsTrack");
@@ -88,9 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartTotalEl = document.getElementById("cart-total");
   const shippingProgressBar = document.getElementById("shipping-progress-bar");
   const shippingText = document.getElementById("shipping-text");
-  const promoInput = document.getElementById("promo-input");
-  const applyPromoBtn = document.getElementById("apply-promo-btn");
-  const promoFeedback = document.getElementById("promo-feedback");
   const whatsappCheckoutBtn = document.getElementById("whatsapp-checkout-btn");
   const clearCartBtn = document.getElementById("clear-cart-btn");
 
@@ -100,14 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeModalProductId = null;
 
   // ==========================================
-  //         RENDU DES PRODUITS
+  //         RENDU DES PRODUITS EN GRILLE/CARROUSEL
   // ==========================================
   function renderProducts(items = products) {
     if (!productsTrack) return;
     productsTrack.innerHTML = "";
 
     if (items.length === 0) {
-      productsTrack.innerHTML = `<p style="text-align:center; width:100%; color:var(--text-muted);">Aucun soin ne correspond à votre recherche.</p>`;
+      productsTrack.innerHTML = `<p style="text-align:center; width:100%; color:var(--text-muted); padding:30px 0;">Aucun soin ne correspond à votre recherche.</p>`;
       return;
     }
 
@@ -118,9 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       card.innerHTML = `
         <div class="card-badge ${product.badgeClass}">${product.badge}</div>
-        <div class="card-image-placeholder">
-          <span>th♡</span>
-          <small>TSYRIH</small>
+        <div class="card-image-wrapper">
+          <img src="${product.image}" alt="${product.name}" class="product-img" loading="lazy">
           <button class="quick-view-btn" data-id="${product.id}">Aperçu rapide</button>
         </div>
         <div class="card-content">
@@ -212,8 +209,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
   function saveCart() {
     localStorage.setItem('tsyrih_cart', JSON.stringify(cart));
-    if (appliedPromo) localStorage.setItem('tsyrih_promo', appliedPromo);
-    else localStorage.removeItem('tsyrih_promo');
     updateCartUI();
   }
 
@@ -225,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (existing) {
       existing.quantity += quantity;
     } else {
-      cart.push({ id: product.id, name: product.name, price: product.price, volume: product.volume, quantity: quantity });
+      cart.push({ id: product.id, name: product.name, price: product.price, volume: product.volume, image: product.image, quantity: quantity });
     }
 
     saveCart();
@@ -252,13 +247,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    let discount = (appliedPromo === CONFIG.promoCode) ? subtotal * CONFIG.discountRate : 0;
     let freeShip = subtotal >= CONFIG.freeShippingThreshold;
     let shipping = freeShip ? 0 : CONFIG.shippingCost;
-    let total = subtotal - discount + shipping;
+    let total = subtotal + shipping;
 
     cartItemsContainer.innerHTML = cart.map(item => `
       <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}" class="cart-item-img">
         <div class="cart-item-info">
           <div class="cart-item-title">${item.name}</div>
           <div class="cart-item-price">${(item.price * item.quantity).toLocaleString()} Ar</div>
@@ -309,24 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearCartBtn.addEventListener('click', () => {
       if (confirm("Voulez-vous vider le panier ?")) {
         cart = [];
-        appliedPromo = null;
         saveCart();
-      }
-    });
-  }
-
-  // Code Promo
-  if (applyPromoBtn) {
-    applyPromoBtn.addEventListener('click', () => {
-      const code = promoInput.value.trim().toUpperCase();
-      if (code === CONFIG.promoCode) {
-        appliedPromo = code;
-        saveCart();
-        promoFeedback.textContent = "Code appliqué : -10% !";
-        promoFeedback.style.color = "green";
-      } else {
-        promoFeedback.textContent = "Code invalide.";
-        promoFeedback.style.color = "red";
       }
     });
   }
@@ -345,16 +323,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (cart.length === 0) return alert("Votre panier est vide.");
 
       let subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-      let discount = (appliedPromo === CONFIG.promoCode) ? subtotal * CONFIG.discountRate : 0;
       let freeShip = subtotal >= CONFIG.freeShippingThreshold;
-      let total = subtotal - discount + (freeShip ? 0 : CONFIG.shippingCost);
+      let total = subtotal + (freeShip ? 0 : CONFIG.shippingCost);
 
       let msg = `Bonjour *Tsyrih Hair Care*, je souhaite commander :\n\n`;
       cart.forEach((item, index) => {
         msg += `${index + 1}. *${item.name}* (x${item.quantity}) - ${(item.price * item.quantity).toLocaleString()} Ar\n`;
       });
 
-      if (discount > 0) msg += `\n*Remise (10%)* : -${discount.toLocaleString()} Ar`;
       msg += `\n*Frais de livraison* : ${freeShip ? 'Gratuite' : CONFIG.shippingCost.toLocaleString() + ' Ar'}`;
       msg += `\n*TOTAL* : *${total.toLocaleString()} Ar*\n\nMerci de valider ma commande !`;
 
@@ -377,6 +353,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("modal-desc").textContent = p.desc;
     document.getElementById("modal-ingredients").textContent = p.ingredients;
     document.getElementById("modal-usage").textContent = p.usage;
+    
+    const modalImg = document.getElementById("modal-img");
+    if (modalImg) modalImg.src = p.image;
 
     productModalOverlay?.classList.add("open");
   }
@@ -447,6 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (itemsContainer) {
       itemsContainer.innerHTML = products.slice(0, 3).map(p => `
         <div class="routine-mini-card">
+          <img src="${p.image}" alt="${p.name}">
           <strong>${p.name}</strong>
           <p style="color:var(--primary-dark); font-weight:bold;">${p.price.toLocaleString()} Ar</p>
         </div>
@@ -463,9 +443,8 @@ document.addEventListener("DOMContentLoaded", () => {
       addToCart(1);
       addToCart(2);
       addToCart(3);
-      appliedPromo = CONFIG.promoCode;
       saveCart();
-      showToast("Routine complète avec 10% de remise ajoutée !");
+      showToast("Routine complète ajoutée au panier !");
     });
   }
 
@@ -476,6 +455,11 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileToggle.addEventListener("click", () => {
       navMenu.classList.toggle("mobile-active");
       overlay?.classList.toggle("show");
+    });
+
+    overlay?.addEventListener("click", () => {
+      navMenu.classList.remove("mobile-active");
+      overlay.classList.remove("show");
     });
   }
 
