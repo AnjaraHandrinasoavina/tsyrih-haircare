@@ -87,7 +87,7 @@
 
         <div class="accueil-products">
           <div class="img-frame">
-            <img src="img1.jpg" alt="Gamme complète de soins capillaires Tsyrih Hair Care" class="accueil-img">
+            <img src="62befda3-270c-4b68-8ce0-ef1b7f27f12c.jpg" alt="Shampooing Purifiant Tsyrih Hair Care" class="accueil-img">
           </div>
           <div class="accueil-float-card">
             <div class="float-icon">
@@ -256,7 +256,7 @@
 
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
               <button class="btn primary-btn" id="add-routine-btn">
-                <i class="fa-solid fa-cart-plus"></i> Ajouter le rituel complet au panier (-10%)
+                <i class="fa-solid fa-cart-plus"></i> Ajouter le rituel complet au panier
               </button>
               <button class="btn secondary-btn" id="restart-quiz-btn">
                 <i class="fa-solid fa-rotate-right"></i> Recommencer le test
@@ -290,7 +290,7 @@
         </div>
       </div>
 
-      <!-- Carrousel de produits -->
+      <!-- Carrousel / Grille de produits -->
       <div class="slider-wrapper">
         <div class="products-track" id="productsTrack">
           <!-- Injecté dynamiquement par JavaScript -->
@@ -311,7 +311,7 @@
     <section id="apropos" class="story">
       <div class="story-container">
         <div class="story-image">
-          <img src="img1.jpg" alt="Philosophie Tsyrih Hair Care">
+          <img src="2cd4cae1-d484-4b36-a3fd-f8c636240518.jpg" alt="Philosophie Tsyrih Hair Care">
         </div>
         <div class="story-content">
           <span class="eyebrow">L'Univers Tsyrih</span>
@@ -485,13 +485,7 @@
           <span id="cart-total" style="color: var(--primary-dark);">0 Ar</span>
         </div>
 
-        <div class="promo-input-row">
-          <input type="text" id="promo-input" placeholder="Code promo (ex: BEAUTE10)">
-          <button class="btn primary-btn btn-sm" id="apply-promo-btn">Appliquer</button>
-        </div>
-        <p id="promo-feedback"></p>
-
-        <div class="cart-actions">
+        <div class="cart-actions" style="margin-top: 15px;">
           <button class="btn btn-whatsapp" id="whatsapp-checkout-btn">
             <i class="fa-brands fa-whatsapp"></i> Commander via WhatsApp
           </button>
@@ -509,9 +503,8 @@
       <button class="modal-close-btn" id="modal-close-btn" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
       <div class="modal-body">
         <div class="modal-image-col">
-          <div class="card-image-placeholder" id="modal-img-box">
-            <span>th♡</span>
-            <small>TSYRIH</small>
+          <div class="modal-img-box" id="modal-img-box">
+            <img src="" id="modal-img" alt="Produit Tsyrih">
           </div>
         </div>
         <div class="modal-info-col">
@@ -543,14 +536,9 @@
       </div>
     </div>
   </div>
-
-  <!-- Superposition Overlay Menu Mobile -->
+  
   <div id="overlay"></div>
-
-  <!-- Notifications Toasts -->
   <div class="toast-container" id="toast-container"></div>
-
-  <!-- Script Principal -->
   <script src="script.js"></script>
 </body>
 </html>
