@@ -1,4 +1,3 @@
-
 :root {
   --primary: #c87f89;
   --primary-hover: #b56e78;
@@ -50,8 +49,9 @@ a {
 header.navbar {
   position: sticky;
   top: 0;
-  background: rgba(252, 248, 247, 0.94);
+  background: rgba(252, 248, 247, 0.95);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 100;
   border-bottom: 1px solid var(--border-color);
 }
@@ -62,7 +62,7 @@ header.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 30px;
+  padding: 12px 24px;
 }
 
 .logo {
@@ -281,7 +281,7 @@ nav.nav-menu a.active::after {
 
 /* Section Accueil */
 .accueil {
-  padding: 60px 30px;
+  padding: 60px 24px;
   background: linear-gradient(135deg, #fdf4f3 0%, #f7e6e4 100%);
 }
 
@@ -327,6 +327,7 @@ nav.nav-menu a.active::after {
   display: flex;
   gap: 12px;
   margin-bottom: 35px;
+  flex-wrap: wrap;
 }
 
 .accueil-stats {
@@ -361,11 +362,13 @@ nav.nav-menu a.active::after {
   padding: 10px;
   background: #ffffff;
   box-shadow: var(--shadow-hover);
+  max-width: 450px;
+  width: 100%;
 }
 
 .accueil-img {
   width: 100%;
-  max-width: 450px;
+  height: 420px;
   border-radius: 16px;
   display: block;
   object-fit: cover;
@@ -431,6 +434,7 @@ nav.nav-menu a.active::after {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .benefits b {
@@ -446,7 +450,7 @@ nav.nav-menu a.active::after {
 
 /* Quiz Diagnostic Capillaire */
 .diagnostic-section {
-  padding: 70px 30px;
+  padding: 70px 24px;
   background: var(--bg-card);
 }
 
@@ -565,13 +569,24 @@ nav.nav-menu a.active::after {
   border-radius: 12px;
   width: 180px;
   font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.routine-mini-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 /* Boutique & Produits */
 .shop {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 70px 30px;
+  padding: 70px 24px;
 }
 
 .catalog-controls {
@@ -650,6 +665,7 @@ nav.nav-menu a.active::after {
   display: none;
 }
 
+/* Carte Produit */
 .product-card {
   flex: 0 0 300px;
   background: var(--bg-card);
@@ -672,14 +688,15 @@ nav.nav-menu a.active::after {
   position: absolute;
   top: 15px;
   left: 15px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   color: var(--text-main);
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 20px;
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .card-badge.highlight {
@@ -687,40 +704,40 @@ nav.nav-menu a.active::after {
   color: #fff;
 }
 
-.card-image-placeholder {
-  height: 180px;
-  background: linear-gradient(135deg, #fce8e6 0%, #edd3d0 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-dark);
+.card-image-wrapper {
+  height: 260px;
   position: relative;
+  overflow: hidden;
+  background: #fdf5f4;
 }
 
-.card-image-placeholder span {
-  font-family: var(--font-serif);
-  font-size: 36px;
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.card-image-placeholder small {
-  font-size: 11px;
-  letter-spacing: 3px;
-  font-weight: 700;
+.product-card:hover .product-img {
+  transform: scale(1.06);
 }
 
 .quick-view-btn {
   position: absolute;
-  bottom: 10px;
-  background: rgba(255, 255, 255, 0.9);
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
   border: none;
-  padding: 6px 14px;
+  padding: 8px 18px;
   border-radius: 20px;
   font-size: 11px;
   font-weight: 600;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .product-card:hover .quick-view-btn {
@@ -844,7 +861,7 @@ nav.nav-menu a.active::after {
 
 /* Story Section */
 .story {
-  padding: 80px 30px;
+  padding: 80px 24px;
   background: #fff;
 }
 
@@ -856,11 +873,18 @@ nav.nav-menu a.active::after {
   gap: 60px;
 }
 
+.story-image {
+  flex: 1;
+}
+
 .story-image img {
   width: 100%;
   max-width: 480px;
+  height: auto;
   border-radius: 20px;
   box-shadow: var(--shadow-soft);
+  object-fit: cover;
+  display: block;
 }
 
 .story-content {
@@ -908,7 +932,7 @@ nav.nav-menu a.active::after {
 .commitments {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 30px;
+  padding: 80px 24px;
 }
 
 .commit-grid {
@@ -952,7 +976,7 @@ nav.nav-menu a.active::after {
 .faq-section {
   max-width: 800px;
   margin: 0 auto;
-  padding: 80px 30px;
+  padding: 80px 24px;
 }
 
 .faq-list {
@@ -1091,6 +1115,14 @@ nav.nav-menu a.active::after {
   border-bottom: 1px solid #f7ebe9;
 }
 
+.cart-item-img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
 .cart-item-info {
   flex-grow: 1;
 }
@@ -1134,20 +1166,6 @@ nav.nav-menu a.active::after {
   margin-bottom: 6px;
 }
 
-.promo-input-row {
-  display: flex;
-  gap: 8px;
-  margin: 12px 0;
-}
-
-.promo-input-row input {
-  flex-grow: 1;
-  padding: 8px 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  font-size: 11px;
-}
-
 .cart-actions {
   display: flex;
   flex-direction: column;
@@ -1178,7 +1196,7 @@ nav.nav-menu a.active::after {
 .modal-container {
   background: #fff;
   border-radius: 20px;
-  max-width: 700px;
+  max-width: 720px;
   width: 100%;
   padding: 30px;
   position: relative;
@@ -1194,12 +1212,28 @@ nav.nav-menu a.active::after {
   border: none;
   background: none;
   cursor: pointer;
+  z-index: 5;
 }
 
 .modal-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
+  align-items: center;
+}
+
+.modal-img-box {
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fdf5f4;
+}
+
+.modal-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Notifications Toast */
@@ -1235,7 +1269,7 @@ nav.nav-menu a.active::after {
 footer {
   background: var(--bg-footer);
   color: #f3e6e8;
-  padding: 60px 30px 20px;
+  padding: 60px 24px 20px;
 }
 
 .footer-container {
@@ -1325,11 +1359,9 @@ footer {
   display: block;
 }
 
-/* Responsivité Mobile */
 @media (max-width: 992px) {
-  .accueil-container, .story-container, .modal-body {
+  .accueil-container, .story-container {
     flex-direction: column;
-    grid-template-columns: 1fr;
     text-align: center;
   }
   
@@ -1337,17 +1369,42 @@ footer {
     margin: 0 auto 30px;
   }
   
-  .benefits, .commit-grid, .quiz-options-grid {
-    grid-template-columns: repeat(1, 1fr);
+  .accueil-actions {
+    justify-content: center;
+  }
+
+  .accueil-stats {
+    justify-content: center;
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px 24px 40px;
+  }
+
+  .commit-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .footer-container {
     grid-template-columns: 1fr;
     gap: 30px;
   }
+
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-img-box {
+    height: 220px;
+  }
 }
 
 @media (max-width: 768px) {
+  .header-inner {
+    padding: 10px 16px;
+  }
+
   nav.nav-menu {
     display: none;
     flex-direction: column;
@@ -1358,6 +1415,7 @@ footer {
     background: #fff;
     padding: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    gap: 15px;
   }
 
   nav.nav-menu.mobile-active {
@@ -1372,8 +1430,62 @@ footer {
     display: none;
   }
 
-  .benefits, .quiz-options-grid {
+  .header-cta {
+    padding: 8px 10px;
+  }
+
+  .accueil h1 {
+    font-size: 38px;
+  }
+
+  .benefits {
     grid-template-columns: 1fr;
   }
 
+  .quiz-wrapper {
+    padding: 20px 15px;
+  }
+
+  .quiz-options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    flex: 0 0 260px;
+  }
+
+  .quick-view-btn {
+    opacity: 1;
+    bottom: 10px;
+  }
+
+  .slider-controls {
+    margin-top: 10px;
+  }
+
+  .cart-drawer {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .accueil h1 {
+    font-size: 32px;
+  }
+
+  .accueil-img {
+    height: 320px;
+  }
+
+  .commit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-track {
+    gap: 15px;
+  }
+
+  .product-card {
+    flex: 0 0 85vw;
+  }
 }
